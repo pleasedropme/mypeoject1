@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" required>
+    <label for="url">URL:</label>
+    <input id="url" type="url" name="url" required>
+    <button type="submit">Create</button>
+</form>
