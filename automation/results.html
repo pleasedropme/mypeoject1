@@ -1,0 +1,21 @@
+<h1>Automation Results</h1>
+
+<h2>New Sites</h2>
+{% for site in new_sites %}
+    <p>Name: {{ site.name }}</p>
+    <p>URL: {{ site.url }}</p>
+{% endfor %}
+
+<h2>Updated Products</h2>
+{% for product in updated_products %}
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+    <img src="{{ product.image_url }}" alt="{{ product.title }}">
+{% endfor %}
+
+<h2>Updated Translations</h2>
+{% for translation in updated_translations %}
+    <h2>{{ translation.title }}</h2>
+    <p>{{ translation.description }}</p>
+{% endfor %}
