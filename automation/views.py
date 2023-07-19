@@ -3,6 +3,13 @@ from .models import Site
 from products.views import update_product_data_automatically
 from translations.views import update_translations_automatically
 from django.shortcuts import render
+from .tasks import run_automation
+
+def run_automation_view(request):
+    """Запускает автоматическое обновление данных о продуктах и переводах и отображает результаты."""
+    results = run_automation.delay()
+    return render(request, 'automation/results.html', {'results': results})
+
 
 # Функция представления для отображения списка сайтов
 def site_list(request):
